@@ -8,11 +8,11 @@ import { error } from "console"
 
 export function Chat() {
     const { messages, input, handleInputChange, handleSubmit } = useChat({
-        api: 'api/ex1',
-        onError: (e) => {
-            console.log(e)
+        api: 'api/chat',
+        onError: (error) => {
+            console.log(error);
         }
-    })
+    });
     const chatParent = useRef<HTMLUListElement>(null)
 
     useEffect(() => {

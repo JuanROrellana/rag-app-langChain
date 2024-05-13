@@ -4,15 +4,9 @@ import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { useChat } from "ai/react"
 import { useRef, useEffect } from 'react'
-import { error } from "console"
 
 export function Chat() {
-    const { messages, input, handleInputChange, handleSubmit } = useChat({
-        api: 'api/ex1',
-        onError: (e) => {
-            console.log(e)
-        }
-    })
+    const { messages, input, handleInputChange, handleSubmit } = useChat();
     const chatParent = useRef<HTMLUListElement>(null)
 
     useEffect(() => {
